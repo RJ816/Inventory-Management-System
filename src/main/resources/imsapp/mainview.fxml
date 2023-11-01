@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane fx:id="mainFormPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="1200.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="imsapp.MainController">
+   <children>
+      <AnchorPane fx:id="mainFormPartsPane" layoutX="63.0" layoutY="41.0" prefHeight="300.0" prefWidth="500.0" style="-fx-border-color: black; -fx-border-radius: 10;">
+         <children>
+            <Button fx:id="mainFormPartsModifyButton" layoutX="351.0" layoutY="261.0" mnemonicParsing="false" onAction="#enterModifyPartForm" text="Modify" />
+            <Label fx:id="mainFormPartsLabel" layoutX="14.0" layoutY="26.0" text="Parts" />
+            <TextField fx:id="mainFormPartsTextField" layoutX="327.0" layoutY="22.0" onKeyTyped="#mainFormPartsFilter" prefHeight="25.0" prefWidth="156.0" promptText="Search by Part ID or Name" />
+            <TableView fx:id="mainFormPartTableView" layoutX="15.0" layoutY="50.0" prefHeight="200.0" prefWidth="468.0">
+              <columns>
+                <TableColumn fx:id="partTVColumnPartId" prefWidth="75.0" text="Part ID" />
+                <TableColumn fx:id="partTVColumnName" prefWidth="86.0" text="Part Name" />
+                  <TableColumn fx:id="partTVColumnInv" prefWidth="144.0" text="Inventory Level" />
+                  <TableColumn fx:id="partTVColumnPrice" prefWidth="162.0" text="Price/Cost Per Unit" />
+              </columns>
+            </TableView>
+            <Button fx:id="mainFormPartsAddButton" layoutX="289.0" layoutY="261.0" mnemonicParsing="false" onAction="#enterAddPartForm" text="Add" />
+            <Button fx:id="mainFormPartsDeleteButton" layoutX="435.0" layoutY="261.0" mnemonicParsing="false" onAction="#mainFormPartDelete" text="Delete" />
+         </children>
+      </AnchorPane>
+       <AnchorPane fx:id="mainFormProductsPane" layoutX="600.0" layoutY="41.0" prefHeight="300.0" prefWidth="500.0" style="-fx-border-color: black; -fx-border-radius: 10;">
+           <children>
+               <Button fx:id="mainFormProductsModifyButton" layoutX="351.0" layoutY="261.0" mnemonicParsing="false" onAction="#enterModifyProductForm" text="Modify" />
+               <Label fx:id="mainFormProductsLabel" layoutX="14.0" layoutY="26.0" text="Products" />
+               <TextField fx:id="mainFormProductsTextField" layoutX="327.0" layoutY="22.0" onKeyTyped="#mainFormProductsFilter" prefHeight="25.0" prefWidth="156.0" promptText="Search by Part ID or Name" />
+               <TableView fx:id="mainFormProductTableView" layoutX="15.0" layoutY="50.0" prefHeight="200.0" prefWidth="468.0">
+                   <columns>
+                       <TableColumn fx:id="productTVColumnProductId" prefWidth="75.0" text="Product ID" />
+                       <TableColumn fx:id="productTVColumnName" prefWidth="86.0" text="Product Name" />
+                       <TableColumn fx:id="productTVColumnInv" prefWidth="144.0" text="Inventory Level" />
+                       <TableColumn fx:id="productTVColumnPrice" prefWidth="162.0" text="Price/Cost Per Unit" />
+                   </columns>
+               </TableView>
+               <Button fx:id="mainFormProductsAddButton" layoutX="289.0" layoutY="261.0" mnemonicParsing="false" onAction="#enterAddProductForm" text="Add" />
+               <Button fx:id="mainFormProductsDeleteButton" layoutX="435.0" layoutY="261.0" mnemonicParsing="false" onAction="#mainFormProductDelete" text="Delete" />
+           </children>
+       </AnchorPane>
+      <Button fx:id="mainFormExitButton" layoutX="1128.0" layoutY="361.0" mnemonicParsing="false" onAction="#onExit" text="Exit" />
+   </children>
+</AnchorPane>

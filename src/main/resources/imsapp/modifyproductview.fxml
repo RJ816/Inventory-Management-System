@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane fx:id="modifyProductPane" focusTraversable="true" prefHeight="600.0" prefWidth="1000.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="imsapp.ModifyProductController">
+    <children>
+        <Label fx:id="modifyProductLabel" layoutX="40.0" layoutY="32.0" text="Modify Product">
+            <font>
+                <Font name="System Bold" size="12.0" />
+            </font></Label>
+        <Label fx:id="modifyProductIdLabel" layoutX="81.0" layoutY="98.0" prefHeight="17.0" prefWidth="19.0" text="ID" />
+        <TextField fx:id="modifyProductIdTextField" disable="true" editable="false" layoutX="126.0" layoutY="94.0" />
+        <Label fx:id="modifyProductNameLabel" layoutX="65.0" layoutY="134.0" text="Name" />
+        <TextField fx:id="modifyProductNameTextField" layoutX="126.0" layoutY="130.0" promptText="Product Name" />
+        <Label fx:id="modifyProductInventoryLabel" layoutX="52.0" layoutY="167.0" text="Inventory" />
+        <TextField fx:id="modifyProductInventoryTextField" layoutX="126.0" layoutY="163.0" promptText="Inventory Amount" />
+        <Label fx:id="modifyProductPriceLabel" layoutX="47.0" layoutY="245.0" text="Price/Cost" />
+        <TextField fx:id="modifyProductPriceTextField" layoutX="126.0" layoutY="241.0" promptText="Product Price" />
+        <Label fx:id="modifyProductMaxLabel" layoutX="56.0" layoutY="207.0" text="Max Inv" />
+        <Label fx:id="modifyProductMinLabel" layoutX="215.0" layoutY="207.0" text="Min Inv" />
+        <TextField fx:id="modifyProductMaxTextField" layoutX="111.0" layoutY="203.0" prefHeight="25.0" prefWidth="83.0" promptText="Max Inv" />
+        <TextField fx:id="modifyProductMinTextField" layoutX="269.0" layoutY="203.0" prefHeight="25.0" prefWidth="83.0" promptText="Min Inv" />
+        <TextField fx:id="modifyProductFormTextField" layoutX="817.0" layoutY="28.0" onKeyTyped="#modifyProductFormFilter" prefHeight="25.0" prefWidth="156.0" promptText="Search by Part ID or Name" />
+        <TableView fx:id="modifyProductFormPoolTableView" layoutX="505.0" layoutY="67.0" prefHeight="200.0" prefWidth="468.0">
+            <columns>
+                <TableColumn fx:id="modifyProductPoolTVColumnId" prefWidth="75.0" text="Part ID" />
+                <TableColumn fx:id="modifyProductPoolTVColumnName" prefWidth="86.0" text="Part Name" />
+                <TableColumn fx:id="modifyProductPoolTVColumnInv" prefWidth="144.0" text="Inventory Level" />
+                <TableColumn fx:id="modifyProductPoolTVColumnPrice" prefWidth="162.0" text="Price/Cost Per Unit" />
+            </columns>
+        </TableView>
+        <Button fx:id="modifyProductSaveButton" layoutX="868.0" layoutY="563.0" mnemonicParsing="false" onAction="#modifyProductSave" text="Save" />
+        <Button fx:id="modifyProductCancelButton" layoutX="921.0" layoutY="563.0" mnemonicParsing="false" onAction="#modifyProductCancel" text="Cancel" />
+        <Button fx:id="modifyProductFormRemoveButton" layoutX="673.0" layoutY="519.0" mnemonicParsing="false" onAction="#modifyProductFormRemovePart" text="Remove Associated Part" />
+        <Button fx:id="modifyProductAddButton" layoutX="720.0" layoutY="275.0" mnemonicParsing="false" onAction="#modifyProductFormAddPart" text="Add" />
+        <TableView fx:id="modifyProductFormSelectTableView" layoutX="505.0" layoutY="306.0" prefHeight="200.0" prefWidth="468.0">
+            <columns>
+                <TableColumn fx:id="modifyProductSelectTVColumnId" prefWidth="75.0" text="Part ID" />
+                <TableColumn fx:id="modifyProductSelectTVColumnName" prefWidth="86.0" text="Part Name" />
+                <TableColumn fx:id="modifyProductSelectTVColumnInv" prefWidth="144.0" text="Inventory Level" />
+                <TableColumn fx:id="modifyProductSelectTVColumnPrice" prefWidth="162.0" text="Price/Cost Per Unit" />
+            </columns>
+        </TableView>
+    </children>
+</AnchorPane>

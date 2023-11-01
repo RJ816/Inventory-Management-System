@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane fx:id="addProductPane" focusTraversable="true" prefHeight="600.0" prefWidth="1000.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="imsapp.AddProductController">
+    <children>
+        <Label fx:id="addProductLabel" layoutX="40.0" layoutY="32.0" text="Add Product">
+            <font>
+                <Font name="System Bold" size="12.0" />
+            </font></Label>
+        <Label fx:id="addProductIdLabel" layoutX="81.0" layoutY="98.0" prefHeight="17.0" prefWidth="19.0" text="ID" />
+        <TextField fx:id="addProductIdTextField" disable="true" editable="false" layoutX="126.0" layoutY="94.0" onAction="#addProductSetIdAuto" />
+        <Label fx:id="addProductNameLabel" layoutX="65.0" layoutY="134.0" text="Name" />
+        <TextField fx:id="addProductNameTextField" layoutX="126.0" layoutY="130.0" promptText="Product Name" />
+        <Label fx:id="addProductInventoryLabel" layoutX="52.0" layoutY="167.0" text="Inventory" />
+        <TextField fx:id="addProductInventoryTextField" layoutX="126.0" layoutY="163.0" promptText="Inventory Amount" />
+        <Label fx:id="addProductPriceLabel" layoutX="47.0" layoutY="245.0" text="Price/Cost" />
+        <TextField fx:id="addProductPriceTextField" layoutX="126.0" layoutY="241.0" promptText="Product Price" />
+        <Label fx:id="addProductMaxLabel" layoutX="56.0" layoutY="207.0" text="Max Inv" />
+        <Label fx:id="addProductMinLabel" layoutX="215.0" layoutY="207.0" text="Min Inv" />
+        <TextField fx:id="addProductMaxTextField" layoutX="111.0" layoutY="203.0" prefHeight="25.0" prefWidth="83.0" promptText="Max Inv" />
+        <TextField fx:id="addProductMinTextField" layoutX="269.0" layoutY="203.0" prefHeight="25.0" prefWidth="83.0" promptText="Min Inv" />
+        <TextField fx:id="addProductFormTextField" layoutX="817.0" layoutY="28.0" onKeyTyped="#addProductFormFilter" prefHeight="25.0" prefWidth="156.0" promptText="Search by Part ID or Name" />
+        <TableView fx:id="addProductFormPoolTableView" layoutX="505.0" layoutY="67.0" prefHeight="200.0" prefWidth="468.0">
+            <columns>
+                <TableColumn fx:id="addProductPoolTVColumnId" prefWidth="75.0" text="Part ID" />
+                <TableColumn fx:id="addProductPoolTVColumnName" prefWidth="86.0" text="Part Name" />
+                <TableColumn fx:id="addProductPoolTVColumnInv" prefWidth="144.0" text="Inventory Level" />
+                <TableColumn fx:id="addProductPoolTVColumnPrice" prefWidth="162.0" text="Price/Cost Per Unit" />
+            </columns>
+        </TableView>
+        <Button fx:id="addProductSaveButton" layoutX="868.0" layoutY="563.0" mnemonicParsing="false" onAction="#addProductSave" text="Save" />
+        <Button fx:id="addProductCancelButton" layoutX="921.0" layoutY="563.0" mnemonicParsing="false" onAction="#addProductCancel" text="Cancel" />
+      <Button fx:id="addProductFormRemoveButton" layoutX="673.0" layoutY="519.0" mnemonicParsing="false" onAction="#addProductFormRemovePart" text="Remove Associated Part" />
+      <Button fx:id="addProductAddButton" layoutX="720.0" layoutY="275.0" mnemonicParsing="false" onAction="#addProductFormAddPart" text="Add" />
+      <TableView fx:id="addProductFormSelectTableView" layoutX="505.0" layoutY="306.0" prefHeight="200.0" prefWidth="468.0">
+         <columns>
+            <TableColumn fx:id="addProductSelectTVColumnId" prefWidth="75.0" text="Part ID" />
+            <TableColumn fx:id="addProductSelectTVColumnName" prefWidth="86.0" text="Part Name" />
+            <TableColumn fx:id="addProductSelectTVColumnInv" prefWidth="144.0" text="Inventory Level" />
+            <TableColumn fx:id="addProductSelectTVColumnPrice" prefWidth="162.0" text="Price/Cost Per Unit" />
+         </columns>
+      </TableView>
+    </children>
+</AnchorPane>
